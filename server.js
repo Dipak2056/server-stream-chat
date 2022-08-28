@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
+//routes
+const authRoutes = require("./routes/auth.js");
+
+app.use("/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("backend server is running.");
